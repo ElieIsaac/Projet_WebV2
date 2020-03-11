@@ -1,0 +1,38 @@
+#scene {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    border: 2px black solid;
+}
+
+#pompier1, #pompier2 {
+    height: 100px;
+    width: 100px;
+    z-index: 1;
+    top: 100px;
+    left: 100px;
+    position: absolute;
+}
+
+#ville {
+    width: 800px;
+    height: 800px;
+    z-index: 0;
+    position: relative;
+}
+
+#feu {
+    height: 200px;
+    width : 200px;
+    top: 150px;
+    left: 480px;
+    position: absolute;
+}
+
+#pma {
+    height: 200px;
+    width : 200px;
+    top: 500px;
+    left: 50px;
+    position: absolute;
+}
