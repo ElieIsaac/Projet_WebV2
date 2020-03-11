@@ -5,20 +5,36 @@
 		<link rel = "stylesheet" type = "text/css" href = "PMA.css" />
 	</head>
 	<header>
-	Tete
+	Triage
 	</header>
-	<body>
-		<p>Test PMA</p>
+	<body onload="Init()">
+		<p>Victimes restantes : <span id="nbVict">0</span></p>
+		<table>
+		<tr>
+			Ajouter : 
+		</tr>
 		<tr>
 			<td>
-			Mange
+			<input id = "btnBlessLeg" type="button" value="Blessé légé">
 			</td>
 			<td>
-			Pain
+			<input id = "btnBlessGrave" type="button" value="Blessé grave">
 			</td>
 		</tr>
+		<tr>
+		<td>
+		Blessés légés : <span id="nbBlessLege">0</span></p>
+		</td>
+		<td>
+		Blessés graves : <span id="nbBlessGrave">0</span></p>
+		</td>
+		</tr>
+		</table>
 	</body>
 	<footer>
 	Pied
 	</footer>
+	
+	<script src = "jQuery.js"></script>
+	<script src = "PMAScript.js"></script>
 </html>
