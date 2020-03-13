@@ -7,7 +7,8 @@ btnGrave.addEventListener('click', AjoutBlessGrave);
 
 function Init()
 {
-	AjouterVict();
+	for(var i =0;i<10;i++)
+		AjouterVict();
 }
 
 function AjouterVict()
