@@ -90,7 +90,7 @@ function checkZone(pompier)
 				//on porte une victime lors de l'appui sur espace
 				$(document).keypress(function(event){
 					var keycode = (event.keyCode ? event.keyCode : event.which);
-					if(keycode == '32' && !pompier.porte) //pour ne pas que l'appui sur espace marche plusieurs fois sur la même instance de pompier
+					if(keycode == '32' && !pompier.getPorte()) //pour ne pas que l'appui sur espace marche plusieurs fois sur la même instance de pompier
 					{
 						porteVictime(pompier);
 						console.log(pompier);
@@ -105,7 +105,7 @@ function checkZone(pompier)
 	//on remet le contour en blanc s'il sort de la zone de danger sans avoir porté de victimes ou PMA
 	else 
 	{
-		if (pompier.porte)
+		if (pompier.getPorte())
 		{
 			$(pompier.id).css("border-color","red")
 		}

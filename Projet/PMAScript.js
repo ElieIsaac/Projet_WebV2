@@ -8,7 +8,11 @@ btnGrave.addEventListener('click', AjoutBlessGrave);
 function Init()
 {
 	for(var i =0;i<10;i++)
-		AjouterVict();
+        AjouterVict();
+
+    var Civil1 = new Civil("Monsieur test");
+
+    console.log(Civil1.id);
 }
 
 function AjouterVict()

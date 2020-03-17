@@ -1,18 +1,15 @@
-class Pompier
-{
-	constructor(id)
-	{
-        this.id = id;
+class Pompier extends Personne{
+
+    constructor(id) {
+        super(id);
         this.porte = false;
-	}
+    }
 
-	porterVictime()
-	{
-		this.porte = true;
-	}
+    porterVictime() {
+        this.porte = true;
+    }
 
-	getPorte()
-	{
-		return this.porte;
-	}
+    getPorte() {
+        return this.porte;
+    }
 }

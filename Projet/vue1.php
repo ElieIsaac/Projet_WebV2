@@ -19,7 +19,8 @@
 		</div>
 
 		<script src = "jQuery.js"></script>
-		<script src = "Pompier.js"></script>
+		<script src = "Metier/Personne.js"></script>
+		<script src = "Metier/Pompier.js"></script>
 		<script src = "vue1.js"></script>
 	</body>
 </html>
