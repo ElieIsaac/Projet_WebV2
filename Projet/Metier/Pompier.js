@@ -12,4 +12,5 @@ class Pompier extends Personne{
     getPorte() {
         return this.porte;
     }
+
 }
