@@ -20,24 +20,92 @@ function Init()
 
     const interval = window.setInterval(getVictimes, 1000);
 
-    getVictimes();
+    //getVictimes();
 }
 
 function getVictimes()
 {
     
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "PMAmodel.php");
+    requeteAjax.open("GET", "PMAhandler.php");
+
+    // Quand la requete reçoit des données
 
     requeteAjax.onload = function () {
+        // On recupère le resultat en JSON
         var resultat = requeteAjax.responseText;
-        console.log(resultat);
+
+        // On parse le JSON
+        victJSON = JSON.parse(resultat);
+
+        // On décompose le tableau obtenu
+        for (var i in victJSON)
+        {
+            // En victime
+            var vict = victJSON[i];
+
+            // On récupère le nom de la personne
+            var nom = vict[1];
+
+            // On récupère le prénom de la personne
+            var prenom = vict[2];
+
+            //console.log(nom);
+            //console.log(prenom);
+
+            // On forme l'id du civil en concatenant son nom et prenom
+            var idVict = nom.concat('', prenom);
+
+            // On créer le civil ( la méthode CreateVictime se charge des doublons)
+            CreateVictime(idVict);         
+        }
+
+        //console.log(listVict);
+            
     }
     // On envoie la requête
     requeteAjax.send();
 
     //AjouterVict();
 
+}
+
+function CreateVictime(id)
+{
+    // Si le civil n'existe pas on l'ajoute
+    if (CheckCivil(id) == false) {
+        var Civil1 = new Civil(id);
+        listVict.push(Civil1);
+        console.log(listVict);
+    }
+    else
+    {
+        console.log("existe deja");
+    }
+}
+
+// Renvoie true si l'objet existe déjà false s'il n'existe pas
+function CheckCivil(id) {
+
+    var testCiv = getCivil(id);
+
+    if (testCiv == null)
+    {
+        return false;
+    }
+    else if (testCiv.id == id) {
+        return true;
+    }
+
+    return false;
+}
+
+// Renvoie un civil de la listVict
+function getCivil(id)
+{
+    var civ = listVict.find(x => x.id === id);
+    //console.log(civ);
+    return civ;
 }
 
 function AjouterVict()
