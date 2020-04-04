@@ -25,12 +25,18 @@ function Init()
 
 function getVictimes()
 {
-    /*
+    
     const requeteAjax = new XMLHttpRequest();
     requeteAjax.open("GET", "PMAmodel.php");
-    */
 
-    AjouterVict();
+    requeteAjax.onload = function () {
+        var resultat = requeteAjax.responseText;
+        console.log(resultat);
+    }
+    // On envoie la requête
+    requeteAjax.send();
+
+    //AjouterVict();
 
 }
 

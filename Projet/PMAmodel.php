@@ -1,5 +1,7 @@
 <?php
 
+  getVictimes();
+
 function getVictimes()
 {
     $db = dbConnect();

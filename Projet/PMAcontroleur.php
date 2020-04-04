@@ -1,5 +1,5 @@
 <?php
-	require ('PMAmodel.php');
+	//require ('PMAmodel.php');
 
 	//$victimes = getVictimes();
 	//getVictimes();
