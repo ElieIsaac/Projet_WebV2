@@ -1,7 +1,8 @@
 <?php
 	require ('PMAmodel.php');
 
-	$victimes = getVictimes();
+	//$victimes = getVictimes();
 	//getVictimes();
-	$victimes->closeCursor();
 	require('PMAVue.php');
+	
+	//$victimes->closeCursor();

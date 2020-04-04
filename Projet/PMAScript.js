@@ -2,17 +2,36 @@
 var btnLeg = document.getElementById('btnBlessLeg');
 var btnGrave = document.getElementById('btnBlessGrave');
 
+var listVict = [];
+
 btnLeg.addEventListener('click', AjoutBlessLeg);
 btnGrave.addEventListener('click', AjoutBlessGrave);
 
 function Init()
 {
+    /*
 	for(var i =0;i<10;i++)
         AjouterVict();
 
     var Civil1 = new Civil("Monsieur test");
 
     console.log(Civil1.id);
+    */
+
+    const interval = window.setInterval(getVictimes, 1000);
+
+    getVictimes();
+}
+
+function getVictimes()
+{
+    /*
+    const requeteAjax = new XMLHttpRequest();
+    requeteAjax.open("GET", "PMAmodel.php");
+    */
+
+    AjouterVict();
+
 }
 
 function AjouterVict()

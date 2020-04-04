@@ -5,6 +5,7 @@ function getVictimes()
     $db = dbConnect();
     $req = $db->query('SELECT * FROM VICTIME');
 
+	/*
 	while ($data = $req->fetch()){
 		echo $data['ID'];
 		echo "</br>";
@@ -18,6 +19,11 @@ function getVictimes()
 		echo "</br>";
 	}
     return $req;
+	*/
+
+	$victimes = $req->fetchAll();
+
+	echo json_encode($victimes);
 }
 
 function dbConnect()
