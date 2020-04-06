@@ -36,7 +36,7 @@
 	</footer>
 	
 	<script src = "../jQuery.js"></script>
-	<script src = "../Views/PMAscript.js"></script>
+	<script src = "../Scripts/PMAscript.js"></script>
 	<script src = "../Metier/Personne.js"></script>
 	<script src = "../Metier/Civil.js"></script>
 
