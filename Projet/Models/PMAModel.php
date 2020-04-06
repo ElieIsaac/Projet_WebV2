@@ -24,8 +24,8 @@ function getVictimes()
 	*/
 
 	$victimes = $req->fetchAll();
-
 	echo json_encode($victimes);
+
 }
 
 function dbConnect()
