@@ -27,7 +27,7 @@ function getVictimes()
 {
     
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "PMAmodel.php");
+    requeteAjax.open("GET", "../Models/PMAModel.php");
 
     // Quand la requete reçoit des données
 

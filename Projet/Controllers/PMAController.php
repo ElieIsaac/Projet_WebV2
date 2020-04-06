@@ -25,6 +25,6 @@ if($task == "getVictCtrl"){
 		return victimes;
 	}
 	*/
-	require('PMAVue.php');
+	require('../Views/PMAView.php');
 	
 	//$victimes->closeCursor();

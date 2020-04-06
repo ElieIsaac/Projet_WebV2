@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset = "utf-8" />
-		<link rel = "stylesheet" type = "text/css" href = "PMA.css" />
+		<link rel = "stylesheet" type = "text/css" href = "../Content/PMA.css" />
 	</head>
 	<header>
 	Triage
@@ -35,9 +35,9 @@
 	Pied
 	</footer>
 	
-	<script src = "jQuery.js"></script>
-	<script src = "PMAscript.js"></script>
-	<script src = "Metier/Personne.js"></script>
-	<script src = "Metier/Civil.js"></script>
+	<script src = "../jQuery.js"></script>
+	<script src = "../Views/PMAscript.js"></script>
+	<script src = "../Metier/Personne.js"></script>
+	<script src = "../Metier/Civil.js"></script>
 
 </html>
