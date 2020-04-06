@@ -18,16 +18,16 @@ function Init()
     console.log(Civil1.id);
     */
 
-    const interval = window.setInterval(getVictimes, 1000);
+    //const interval = window.setInterval(getVictimes, 1000);
 
-    //getVictimes();
+    getVictimes();
 }
 
 function getVictimes()
 {
     
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "../Models/PMAModel.php");
+    requeteAjax.open("GET", "../Controllers/PMAController.php?task=getVictCtrl");
 
     // Quand la requete reçoit des données
 
@@ -35,6 +35,7 @@ function getVictimes()
         // On recupère le resultat en JSON
         var resultat = requeteAjax.responseText;
 
+        console.log(resultat);
         // On parse le JSON
         victJSON = JSON.parse(resultat);
 

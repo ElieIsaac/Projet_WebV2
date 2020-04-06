@@ -1,7 +1,5 @@
 <?php
 
-/*
-
 $task = "list";
 
 
@@ -13,18 +11,18 @@ if($task == "getVictCtrl"){
   getVictimesCtrl();
 }
 
-*/
 
-	//require('PMAmodel.php');
+
+	require('../Models/PMAModel.php');
 	//$victimes = getVictimes();
-	/*
+	
 	function getVictimesCtrl()
 	{
 		$victimes = getVictimes();
-		$victimes->closeCursor();
+		//$victimes->closeCursor();
 		return victimes;
 	}
-	*/
+	
 	require('../Views/PMAView.php');
 	
 	//$victimes->closeCursor();

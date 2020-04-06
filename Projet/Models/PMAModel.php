@@ -1,6 +1,6 @@
 <?php
 
-getVictimes();
+//getVictimes();
 
 function getVictimes()
 {
