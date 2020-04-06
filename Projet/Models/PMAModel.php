@@ -24,9 +24,10 @@ function getVictimes()
 	*/
 
 	$victimes = $req->fetchAll();
-	//$victimes->closeCursor();
+
+	// On ferme la requete sql
+	$req->closeCursor();
 	echo json_encode($victimes);
-	//return $victimes;
 
 }
 

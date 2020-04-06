@@ -18,9 +18,9 @@ function Init()
     console.log(Civil1.id);
     */
 
-    //const interval = window.setInterval(getVictimes, 1000);
+    const interval = window.setInterval(getVictimes, 1000);
 
-    getVictimes();
+    //getVictimes();
 }
 
 function getVictimes()
@@ -35,7 +35,6 @@ function getVictimes()
         // On recupère le resultat en JSON
         var resultat = requeteAjax.responseText;
 
-        console.log(resultat);
         // On parse le JSON
         victJSON = JSON.parse(resultat);
 
