@@ -1,7 +1,6 @@
 <?php
 
 require_once('../Models/PMAModel.php');
-require_once('../Views/PMAView.php');
 
 $task = "list";
 
@@ -13,15 +12,17 @@ if(array_key_exists("task", $_GET)){
 if($task == "getVictCtrl"){
   getVictimesCtrl();
 }
-
-	//$victimes = getVictimes();
+else
+{
+	require_once('../Views/PMAView.php');
+}
 	
+
 	function getVictimesCtrl()
 	{
 		$victimes = getVictimes();
 		//$victimes->closeCursor();
+		//echo json_encode($victimes);
+		//$victimes->closeCursor();
 		return $victimes;
 	}
-	
-	
-	//$victimes->closeCursor();
