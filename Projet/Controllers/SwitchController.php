@@ -10,18 +10,18 @@
         GetVictimes();
         break;
 		default:
-		SendError();
+		SendError("Fonction inexistante dans le switch");
         break;
 		}
 	}
 	else
 	{
-		SendError();
+		SendError("Appel du Switch sans méthode demandée");
 	}
 
-	function SendError()
+	function SendError($erreur)
 	{
-		echo json_encode("Erreur du switch controller");
+		echo json_encode($erreur);
 	}
 
 	function GetVictimes()
