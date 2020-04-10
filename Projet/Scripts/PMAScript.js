@@ -25,9 +25,9 @@ function Init()
 
 function getVictimes()
 {
-    
+    /*
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "../Controllers/PMAController.php?task=getVictCtrl");
+    requeteAjax.open("GET", "Controllers/PMAController.php/getVictimes");
 
     // Quand la requete reçoit des données
 
@@ -68,6 +68,48 @@ function getVictimes()
 
     //AjouterVict();
 
+    */
+    
+    $.ajax({
+        type: 'GET',
+        url: 'Controllers/SwitchController.php',
+        timeout: 3000,
+        data: {func: 'getVict'},
+        success: function (data) {
+            //console.log(data);
+            // On parse le JSON
+            victJSON = JSON.parse(data);
+
+            // On décompose le tableau obtenu
+            for (var i in victJSON) {
+                // En victime
+                var vict = victJSON[i];
+
+                // On récupère le nom de la personne
+                var nom = vict[1];
+
+                // On récupère le prénom de la personne
+                var prenom = vict[2];
+
+                //console.log(nom);
+                //console.log(prenom);
+
+                // On forme l'id du civil en concatenant son nom et prenom
+                var idVict = nom.concat('', prenom);
+
+                // On créer le civil ( la méthode CreateVictime se charge des doublons)
+                CreateVictime(idVict);
+            }
+
+            //console.log(listVict);
+
+        },
+        error: function () {
+            console.log("La requête n'a pas aboutie");
+        }
+    });
+    
+
 }
 
 function CreateVictime(id)
@@ -76,6 +118,7 @@ function CreateVictime(id)
     if (CheckCivil(id) == false) {
         var Civil1 = new Civil(id);
         listVict.push(Civil1);
+        //AjouterVict();
         console.log(listVict);
     }
     else

@@ -1,11 +1,13 @@
 <?php
 
-//getVictimes();
-
-function getVictimes()
+class PMAModel extends Model
 {
-    $db = dbConnect();
-    $req = $db->query('SELECT * FROM VICTIME');
+
+
+public function getVictimes()
+{
+    $this->getBdd();
+    $req = parent::$_bdd->query('SELECT * FROM VICTIME');
 
 	/*
 	while ($data = $req->fetch()){
@@ -31,15 +33,4 @@ function getVictimes()
 
 }
 
-function dbConnect()
-{
-    try
-    {
-        $db = new PDO('mysql:host=localhost;dbname=orsec;charset=utf8', 'root', '');
-        return $db;
-    }
-    catch(Exception $e)
-    {
-        die('Erreur : '.$e->getMessage());
-    }
 }
