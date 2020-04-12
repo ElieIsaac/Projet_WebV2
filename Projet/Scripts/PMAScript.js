@@ -101,15 +101,13 @@ function getVictimes()
                 CreateVictime(idVict);
             }
 
-            //console.log(listVict);
+            console.log(listVict);
 
         },
         error: function () {
             console.log("La requête n'a pas aboutie");
         }
     });
-    
-
 }
 
 function CreateVictime(id)
@@ -119,7 +117,7 @@ function CreateVictime(id)
         var Civil1 = new Civil(id);
         listVict.push(Civil1);
         //AjouterVict();
-        console.log(listVict);
+        //console.log(listVict);
     }
     else
     {
