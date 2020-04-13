@@ -96,9 +96,10 @@ function getVictimes()
 
                 // On créer le civil ( la méthode CreateVictime se charge des doublons)
                 CreateVictime(nom,prenom);
+
             }
 
-            console.log(listVict);
+            //console.log(listVict);
 
         },
         error: function () {
