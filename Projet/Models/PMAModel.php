@@ -31,4 +31,14 @@ class PMAModel extends Model
 		echo json_encode($victimes);
 	}
 
+	public function sendVictimes()
+	{
+		$this->getBdd();
+
+		$req = parent::$_bdd->prepare('INSERT INTO ');
+		$req->closeCursor();
+
+		echo json_encode(["status" => "success"]);
+	}
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+	// GET
 	if(isset($_GET['func']) && !empty($_GET['func']))
 	{
         $func = $_GET['func']; 

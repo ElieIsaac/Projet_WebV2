@@ -94,11 +94,8 @@ function getVictimes()
                 //console.log(nom);
                 //console.log(prenom);
 
-                // On forme l'id du civil en concatenant son nom et prenom
-                var idVict = nom.concat('', prenom);
-
                 // On créer le civil ( la méthode CreateVictime se charge des doublons)
-                CreateVictime(idVict);
+                CreateVictime(nom,prenom);
             }
 
             console.log(listVict);
@@ -110,11 +107,16 @@ function getVictimes()
     });
 }
 
-function CreateVictime(id)
+function CreateVictime(nom,prenom)
 {
+    // On forme l'id du civil en concatenant son nom et prenom
+    var id = nom.concat('', prenom);
+
     // Si le civil n'existe pas on l'ajoute
     if (CheckCivil(id) == false) {
         var Civil1 = new Civil(id);
+        Civil1.setNom(nom);
+        Civil1.setPrenom(prenom);
         listVict.push(Civil1);
         //AjouterVict();
         //console.log(listVict);
