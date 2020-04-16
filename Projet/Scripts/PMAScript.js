@@ -206,8 +206,8 @@ function DecompterVict()
 
 function AjoutBlessLeg()
 {
-	// Si le nb de victime est supérieur à zéro
-	var nbVict = parseInt(document.getElementById('nbVict').innerHTML);
+    // Si le nb de victime est supérieur à zéro
+    var nbVict = listVict.length;
 	if(nbVict > 0 )
     {
         RemoveVictime(0);
@@ -218,7 +218,7 @@ function AjoutBlessLeg()
 function AjoutBlessGrave()
 {
 	// Si le nb de victime est supérieur à zéro
-	var nbVict = parseInt(document.getElementById('nbVict').innerHTML);
+    var nbVict = listVict.length;
 	if(nbVict > 0 )
     {
         RemoveVictime(0);
