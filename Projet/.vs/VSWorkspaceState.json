@@ -3,8 +3,10 @@
     "",
     "\\Controllers",
     "\\Metier",
-    "\\Models"
+    "\\Models",
+    "\\Scripts",
+    "\\Views"
   ],
-  "SelectedNode": "\\Scripts",
+  "SelectedNode": "\\Models\\PMAModel.php",
   "PreviewInSolutionExplorer": false
 }

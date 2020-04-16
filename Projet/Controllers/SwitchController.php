@@ -34,6 +34,8 @@
 		$victimes = $PMACtrl->getVictimes();
 	}
 
+
+	// POST
 	function DelVictime()
 	{
 	
