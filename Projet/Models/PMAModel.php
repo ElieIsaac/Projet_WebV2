@@ -6,10 +6,10 @@ class PMAModel extends Model
 	public function getVictimes()
 	{
 		$this->getBdd();
-		$req = parent::$_bdd->query('SELECT * FROM VICTIME');
+		$query = parent::$_bdd->query('SELECT * FROM VICTIME');
 
 		/*
-		while ($data = $req->fetch()){
+		while ($data = $query->fetch()){
 			echo $data['ID'];
 			echo "</br>";
 			echo $data['NOM'];
@@ -21,20 +21,25 @@ class PMAModel extends Model
 
 			echo "</br>";
 		}
-		return $req;
+		return $query;
 		*/
 
-		$victimes = $req->fetchAll();
+		$victimes = $query->fetchAll();
 
 		// On ferme la requete sql
-		$req->closeCursor();
+		$query->closeCursor();
 		echo json_encode($victimes);
 	}
 
 	// DELETE un élément de la table VICTIME
-	public function delVictime()
+	public function delVictime($nom,$prenom)
 	{
-	
+		$this->getBdd();
+		$query = parent::$_bdd->prepare('DELETE FROM VICTIME WHERE VICTIME.NOM = ? AND VICTIME.PRENOM = ?;');
+		$query->execute(array($nom, $prenom));
+		$query->closeCursor();
+
+		echo json_encode(["status" => "success"]);
 	}
 
 	// INSERT des éléments dans la ou les table(s) EVAC
@@ -43,8 +48,8 @@ class PMAModel extends Model
 		$this->getBdd();
 
 		//$query = parent::$_bdd->prepare('INSERT INTO victime (NOM, PRENOM, VIVANT, VIE, CHARGE) VALUES (?, ?, 1, 100, 1);');
-        $query->execute(array($nom, $prenom));
-		$req->closeCursor();
+        //$query->execute(array($nom, $prenom));
+		$query->closeCursor();
 
 		echo json_encode(["status" => "success"]);
 	}

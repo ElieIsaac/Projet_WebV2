@@ -110,8 +110,25 @@ function GetVictimes()
 }
 
 // Supprime de la victime de la BD VICTIME
-function DeleteVictime(nom, prenom) {
+function DeleteVictime(nomVict, prenomVict) {
 
+    $.ajax({
+        type: 'POST',
+        url: 'Controllers/SwitchController.php',
+        data: {
+            'func': 'delVict',
+            'nom': nomVict,
+            'prenom': prenomVict,
+        },
+        timeout: 3000,
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (response) {
+            console.log("La requête n'a pas abouti");
+            console.log(response);
+        }
+    });
 }
 
 // Enregistre la victime dans la table evac

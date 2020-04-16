@@ -26,9 +26,9 @@ class PMAController
 		return $victimes;
 	}
 
-	public function delVictime()
+	public function delVictime($nom,$prenom)
 	{
-	
+		$this->_model->DelVictime($nom,$prenom);
 	}
 
 	public function sendToEvac()
