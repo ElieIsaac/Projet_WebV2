@@ -18,10 +18,10 @@ function Init()
     console.log(Civil1.id);
     */
 
-    //const interval = window.setInterval(getVictimes, 1000);
+    const interval = window.setInterval(getVictimes, 1000);
 
     //setCurrentVict();
-    getVictimes();
+    //getVictimes();
 }
 
 function getVictimes()
@@ -173,6 +173,8 @@ function setCurrentVict()
         $("#prenom").text(prenom);
     }
     else {
+        $("#nom").text("");
+        $("#prenom").text("");
         console.log("ya pas");
     }
     
