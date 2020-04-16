@@ -20,6 +20,7 @@ function Init()
 
     const interval = window.setInterval(getVictimes, 1000);
 
+    //setCurrentVict();
     //getVictimes();
 }
 
@@ -121,6 +122,7 @@ function CreateVictime(nom,prenom)
         listVict.push(Civil1);
         //AjouterVict();
         //console.log(listVict);
+        majAffichage();
     }
     else
     {
@@ -152,9 +154,39 @@ function getCivil(id)
     return civ;
 }
 
-function AjouterVict()
+// Affiche les infos sur la première victime dans le tableau
+function setCurrentVict()
 {
-	$("#nbVict").text(parseInt($("#nbVict").text())+1);
+    var civ = listVict[0];
+
+    if (civ != null) {
+        var nom = civ.getNom();
+        var prenom = civ.getPrenom();
+
+        $("#nom").text(nom);
+        $("#prenom").text(prenom);
+    }
+    else {
+        console.log("ya pas");
+    }
+    
+}
+
+// Met à jour l'affichage
+function majAffichage()
+{
+    // On maj les infos sur la première victime
+    setCurrentVict();
+
+    // On met à jour le nombre de victimes
+    SetNbVict();
+}
+
+// Met à jour le nombre de victime selon le nombre d'éléments dans le tableau
+function SetNbVict()
+{
+    //$("#nbVict").text(parseInt($("#nbVict").text())+1);
+    $("#nbVict").text(listVict.length);
 }
 
 function DecompterVict()

@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\Models",
-    "\\Scripts"
+    "\\Metier",
+    "\\Models"
   ],
-  "SelectedNode": "\\Scripts\\PMAScript.js",
+  "SelectedNode": "\\Scripts",
   "PreviewInSolutionExplorer": false
 }
