@@ -18,10 +18,10 @@ function Init()
     console.log(Civil1.id);
     */
 
-    const interval = window.setInterval(getVictimes, 1000);
+    //const interval = window.setInterval(getVictimes, 1000);
 
     //setCurrentVict();
-    //getVictimes();
+    getVictimes();
 }
 
 function getVictimes()
@@ -130,6 +130,12 @@ function CreateVictime(nom,prenom)
     }
 }
 
+function RemoveVictime(id)
+{
+    listVict.splice(id, 1);
+    majAffichage();
+}
+
 // Renvoie true si l'objet existe déjà false s'il n'existe pas
 function CheckCivil(id) {
 
@@ -189,19 +195,21 @@ function SetNbVict()
     $("#nbVict").text(listVict.length);
 }
 
+/*
 function DecompterVict()
 {
 	$("#nbVict").text(parseInt($("#nbVict").text())-1);
 }
+*/
 
 function AjoutBlessLeg()
 {
 	// Si le nb de victime est supérieur à zéro
 	var nbVict = parseInt(document.getElementById('nbVict').innerHTML);
 	if(nbVict > 0 )
-	{
-		DecompterVict();
-		$("#nbBlessLege").text(parseInt($("#nbBlessLege").text())+1);
+    {
+        RemoveVictime(0);
+        $("#nbBlessLege").text(parseInt($("#nbBlessLege").text()) + 1);
 	}
 }
 
@@ -210,8 +218,8 @@ function AjoutBlessGrave()
 	// Si le nb de victime est supérieur à zéro
 	var nbVict = parseInt(document.getElementById('nbVict').innerHTML);
 	if(nbVict > 0 )
-	{
-		DecompterVict();
+    {
+        RemoveVictime(0);
 		$("#nbBlessGrave").text(parseInt($("#nbBlessGrave").text())+1);
 	}
 	
