@@ -18,13 +18,13 @@ function Init()
     console.log(Civil1.id);
     */
 
-    const interval = window.setInterval(getVictimes, 1000);
+    const interval = window.setInterval(GetVictimes, 1000);
 
     //setCurrentVict();
     //getVictimes();
 }
 
-function getVictimes()
+function GetVictimes()
 {
     /*
     const requeteAjax = new XMLHttpRequest();
@@ -109,6 +109,17 @@ function getVictimes()
     });
 }
 
+// Supprime de la victime de la BD VICTIME
+function DeleteVictime(nom, prenom) {
+
+}
+
+// Enregistre la victime dans la table evac
+function SendToEvac(catBless) {
+    // blessé grave / légé à présicer éventuellement
+}
+
+// Créer la victime et l'insert dans le tableau js
 function CreateVictime(nom,prenom)
 {
     // On forme l'id du civil en concatenant son nom et prenom
@@ -130,6 +141,7 @@ function CreateVictime(nom,prenom)
     }
 }
 
+// Enlève la victime du tableau js
 function RemoveVictime(id)
 {
     listVict.splice(id, 1);
@@ -175,7 +187,7 @@ function setCurrentVict()
     else {
         $("#nom").text("");
         $("#prenom").text("");
-        console.log("ya pas");
+        //console.log("ya pas");
     }
     
 }
@@ -193,24 +205,34 @@ function majAffichage()
 // Met à jour le nombre de victime selon le nombre d'éléments dans le tableau
 function SetNbVict()
 {
-    //$("#nbVict").text(parseInt($("#nbVict").text())+1);
     $("#nbVict").text(listVict.length);
 }
 
-/*
-function DecompterVict()
+// Gère le transfert des victimes vers la vue Evac (transfert le 1er élement du tableau js)
+function TransfertVictime(catBless)
 {
-	$("#nbVict").text(parseInt($("#nbVict").text())-1);
+    var civ = listVict[0];
+
+    if (civ != null) {
+        var nom = civ.getNom();
+        var prenom = civ.getPrenom();
+
+        //INSERT dans la BD Evac
+        SendToEvac(catBless);
+        //Suppression dans la BD VICTIME
+        DeleteVictime(nom, prenom);
+        //Suppression du tabelau js
+        RemoveVictime(0);
+    }
 }
-*/
 
 function AjoutBlessLeg()
 {
     // Si le nb de victime est supérieur à zéro
     var nbVict = listVict.length;
 	if(nbVict > 0 )
-    {
-        RemoveVictime(0);
+    {       
+        TransfertVictime("lege");
         $("#nbBlessLege").text(parseInt($("#nbBlessLege").text()) + 1);
 	}
 }
@@ -221,7 +243,7 @@ function AjoutBlessGrave()
     var nbVict = listVict.length;
 	if(nbVict > 0 )
     {
-        RemoveVictime(0);
+        TransfertVictime("grave");
 		$("#nbBlessGrave").text(parseInt($("#nbBlessGrave").text())+1);
 	}
 	
