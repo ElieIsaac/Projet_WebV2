@@ -9,8 +9,10 @@ CREATE TABLE `victime` (
 
 
 INSERT INTO `victime` (`NOM`, `PRENOM`, `VIVANT`, `VIE`, `CHARGE`) VALUES
-('Dupon', 'Jean', 1, 100, 1);
+('Dupont', 'Jean', 1, 100, 1);
 INSERT INTO `victime` (`NOM`, `PRENOM`, `VIVANT`, `VIE`, `CHARGE`) VALUES
 ('Chirac', 'Jeanmi', 1, 100, 1);
 INSERT INTO `victime` (`NOM`, `PRENOM`, `VIVANT`, `VIE`, `CHARGE`) VALUES
 ('Mike', 'Test', 1, 100, 1);
+
+DELETE FROM VICTIME WHERE VICTIME.NOM = "Dupont" AND VICTIME.PRENOM = "Jean";
