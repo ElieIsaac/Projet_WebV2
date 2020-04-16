@@ -26,6 +26,16 @@ class PMAController
 		return $victimes;
 	}
 
+	public function delVictime()
+	{
+	
+	}
+
+	public function sendToEvac()
+	{
+	
+	}
+
 	public function showVue()
 	{
 		require_once('Views/PMAView.php');

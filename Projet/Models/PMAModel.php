@@ -2,7 +2,7 @@
 
 class PMAModel extends Model
 {
-
+	// SELECT les éléments de la table VICTIME
 	public function getVictimes()
 	{
 		$this->getBdd();
@@ -31,7 +31,14 @@ class PMAModel extends Model
 		echo json_encode($victimes);
 	}
 
-	public function sendVictimes()
+	// DELETE un élément de la table VICTIME
+	public function delVictime()
+	{
+	
+	}
+
+	// INSERT des éléments dans la ou les table(s) EVAC
+	public function sendToEvac()
 	{
 		$this->getBdd();
 

@@ -34,3 +34,13 @@
 		$victimes = $PMACtrl->getVictimes();
 	}
 
+	function DelVictime()
+	{
+	
+	}
+
+	function SendToEvac()
+	{
+	
+	}
+
