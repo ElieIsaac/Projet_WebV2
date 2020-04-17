@@ -1,11 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Content",
     "\\Controllers",
+    "\\Metier",
     "\\Models",
     "\\Scripts",
     "\\Views"
   ],
-  "SelectedNode": "\\Scripts\\PMAScript.js",
+  "SelectedNode": "\\initdb_sql.sql",
   "PreviewInSolutionExplorer": false
 }
