@@ -3,7 +3,7 @@
 class PMAModel extends Model
 {
 	// SELECT les éléments de la table VICTIME
-	public function getVictimes()
+	public function GetVictimes()
 	{
 		$this->getBdd();
 		$query = parent::$_bdd->query('SELECT * FROM VICTIME');
@@ -32,7 +32,7 @@ class PMAModel extends Model
 	}
 
 	// DELETE un élément de la table VICTIME
-	public function delVictime($nom,$prenom)
+	public function DelVictime($nom,$prenom)
 	{
 		$this->getBdd();
 		$query = parent::$_bdd->prepare('DELETE FROM VICTIME WHERE VICTIME.NOM = ? AND VICTIME.PRENOM = ?;');
@@ -43,12 +43,13 @@ class PMAModel extends Model
 	}
 
 	// INSERT des éléments dans la ou les table(s) EVAC
-	public function sendToEvac($nom,$prenom)
+	public function SendToEvac($nom,$prenom,$blessures)
 	{
-		$this->getBdd();
 
-		//$query = parent::$_bdd->prepare('INSERT INTO victime (NOM, PRENOM, VIVANT, VIE, CHARGE) VALUES (?, ?, 1, 100, 1);');
-        //$query->execute(array($nom, $prenom));
+		// 0 légères, 1 graves
+		$this->getBdd();
+		$query = parent::$_bdd->prepare('INSERT INTO victims (NOM, PRENOM, VIVANT, VIE, CHARGE, BLESSURES) VALUES (?, ?, 1, 100, 1, ?);');
+        $query->execute(array($nom, $prenom,$blessures));
 		$query->closeCursor();
 
 		echo json_encode(["status" => "success"]);

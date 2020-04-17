@@ -22,7 +22,7 @@ class PMAController
 
 	public function getVictimes()
 	{
-		$victimes = $this->_model->getVictimes();
+		$victimes = $this->_model->GetVictimes();
 		return $victimes;
 	}
 
@@ -31,9 +31,9 @@ class PMAController
 		$this->_model->DelVictime($nom,$prenom);
 	}
 
-	public function sendToEvac()
+	public function sendToEvac($nom,$prenom,$blessures)
 	{
-	
+		$this->_model->SendToEvac($nom,$prenom,$blessures);
 	}
 
 	public function showVue()

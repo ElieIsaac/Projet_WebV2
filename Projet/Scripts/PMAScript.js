@@ -132,8 +132,39 @@ function DeleteVictime(nomVict, prenomVict) {
 }
 
 // Enregistre la victime dans la table evac
-function SendToEvac(catBless) {
+function SendToEvac(nomVict, prenomVict, catBless)
+{
     // blessé grave / légé à présicer éventuellement
+
+    var bless = "rien";
+
+    if (catBless == "lege")
+    {
+        bless = "0";
+    }
+    else if (catBless == "grave")
+    {
+        bless = "1";
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: 'Controllers/SwitchController.php',
+        data: {
+            'func': 'sendEvac',
+            'nom': nomVict,
+            'prenom': prenomVict,
+            'blessures': bless,
+        },
+        timeout: 3000,
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (response) {
+            console.log("La requête n'a pas abouti");
+            console.log(response);
+        }
+    });
 }
 
 // Créer la victime et l'insert dans le tableau js
@@ -235,7 +266,7 @@ function TransfertVictime(catBless)
         var prenom = civ.getPrenom();
 
         //INSERT dans la BD Evac
-        SendToEvac(catBless);
+        SendToEvac(nom, prenom, catBless);
         //Suppression dans la BD VICTIME
         DeleteVictime(nom, prenom);
         //Suppression du tabelau js
