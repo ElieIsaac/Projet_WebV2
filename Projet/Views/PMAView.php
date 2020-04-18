@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset = "utf-8" />
+		<title>Vue PMA</title>
 		<link rel = "stylesheet" type = "text/css" href = "Content/PMA.css" />
 	</head>
 	<header>

@@ -1,13 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Content",
-    "\\Controllers",
-    "\\Metier",
-    "\\Models",
-    "\\Scripts",
     "\\Views"
   ],
-  "SelectedNode": "\\initdb_sql.sql",
+  "SelectedNode": "\\Views\\PMAView.php",
   "PreviewInSolutionExplorer": false
 }
