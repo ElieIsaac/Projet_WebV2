@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Content",
+    "\\Controllers",
     "\\Views"
   ],
-  "SelectedNode": "\\Views\\PMAView.php",
+  "SelectedNode": "\\index.php",
   "PreviewInSolutionExplorer": false
 }
