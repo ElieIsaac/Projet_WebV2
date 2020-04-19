@@ -5,6 +5,6 @@
     "\\Controllers",
     "\\Views"
   ],
-  "SelectedNode": "\\Content\\StylePMA.css",
+  "SelectedNode": "\\Controllers\\PMAController.php",
   "PreviewInSolutionExplorer": false
 }
