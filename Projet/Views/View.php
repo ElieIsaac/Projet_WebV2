@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<?php include("Config.php");?>
+	<?php require_once("Config.php");?>
 	<head>
-	<?php require("Head.php"); ?>
+	<?php require_once("Head.php"); ?>
 	</head>
 
 	<body <?php echo $onload ?>>
@@ -10,15 +10,15 @@
 		<div class="page">
 
 			<header class="site-header">
-			<?php require($header); ?>
+			<?php require_once($header); ?>
 			</header>
 
 			<main class="site-content">
-			<?php require($main); ?>
+			<?php require_once($main); ?>
 			</main>
 
 			<footer class="site-footer">
-			<?php require($footer); ?>
+			<?php require_once($footer); ?>
 			</footer>
 
 		</div>

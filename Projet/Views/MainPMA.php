@@ -3,6 +3,7 @@
 		
 		<div class="Tchat">
 		<p>Tchat</p>
+		<!--Require avec le chat -->
 		</div>
 		
 		<div class="Info">
