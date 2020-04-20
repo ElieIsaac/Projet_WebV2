@@ -15,17 +15,18 @@ body {
 }
 
 .site-header {
-    background-color: red;
+    background-color:cornflowerblue;
+    text-align:center;
 }
 
 .site-content {
     flex: 1;
-    background-color:aliceblue;
+    background-color:white;
 }
 
 .conteneur {
     display: flex;
-	border: 1px solid blue;
+	<!-- border: 1px solid blue; -->
 }
 
 .Tchat {

@@ -1,3 +1,5 @@
 <?php
-echo "Entête";
+echo "Vue triage";
+echo " </br>";
+echo " </br>";
 ?>
