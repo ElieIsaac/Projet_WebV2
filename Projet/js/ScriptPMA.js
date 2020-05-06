@@ -246,7 +246,12 @@ function setCurrentVict()
 
         $("#nom").text(nom);
         $("#prenom").text(prenom);
-        $("#vivant").text(vivant);
+
+        if (civ.vivant == true)
+            $("#vivant").text("Vivant");
+        else if (civ.vivant == false)
+            $("#vivant").text("Mort");
+
         $("#pv").text(vie);
     }
     else {
