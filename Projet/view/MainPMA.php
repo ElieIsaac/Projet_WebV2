@@ -10,7 +10,7 @@
 			<p>Victimes restantes : <span id="nbVict">0</span></p>
 
 			<table id="infosCurrVict">
-				<th colspan="2">
+				<th colspan="4">
 				Infos victime : 
 				</th>
 				<tr>
@@ -19,12 +19,22 @@
 					</td>
 					<td id="nom">
 					</td>
+					<td>
+					Etat : 
+					</td>
+					<td id="vivant">
+					</td>
 				</tr>
 				<tr>
 					<td>
 					Prénom : 
 					</td>
 					<td id="prenom">
+					</td>
+					<td>
+					Points de vie : 
+					</td>
+					<td id="pv">
 					</td>
 				</tr>
 			</table>

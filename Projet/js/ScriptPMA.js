@@ -88,15 +88,18 @@ function GetVictimes()
 
                 // On récupère le nom de la personne
                 var nom = vict[1];
-
                 // On récupère le prénom de la personne
                 var prenom = vict[2];
+                // On récupère l'état de la personne
+                var vivant = vict[3];
+                // On récupère le nombre de pv de la personne
+                var vie = vict[4];
 
                 //console.log(nom);
                 //console.log(prenom);
 
                 // On créer le civil ( la méthode CreateVictime se charge des doublons)
-                CreateVictime(nom,prenom);
+                CreateVictime(nom,prenom,vivant,vie);
 
             }
 
@@ -168,7 +171,7 @@ function SendToEvac(nomVict, prenomVict, catBless)
 }
 
 // Créer la victime et l'insert dans le tableau js
-function CreateVictime(nom,prenom)
+function CreateVictime(nom,prenom,vivant,vie)
 {
     // On forme l'id du civil en concatenant son nom et prenom
     var id = nom.concat('', prenom);
@@ -178,9 +181,19 @@ function CreateVictime(nom,prenom)
         var Civil1 = new Civil(id);
         Civil1.setNom(nom);
         Civil1.setPrenom(prenom);
+
+        // Si l'attribut vivant est à 0 le civil est mort
+        if (vivant == 0) {
+            Civil1.vivant = false;
+        }
+
+        Civil1.vie = vie;
+
         listVict.push(Civil1);
         //AjouterVict();
         //console.log(listVict);
+
+        //On met à jour l'affichage
         majAffichage();
     }
     else
@@ -228,13 +241,19 @@ function setCurrentVict()
     if (civ != null) {
         var nom = civ.getNom();
         var prenom = civ.getPrenom();
+        var vivant = civ.vivant;
+        var vie = civ.vie;
 
         $("#nom").text(nom);
         $("#prenom").text(prenom);
+        $("#vivant").text(vivant);
+        $("#pv").text(vie);
     }
     else {
         $("#nom").text("");
         $("#prenom").text("");
+        $("#vivant").text("");
+        $("#pv").text("");
         //console.log("ya pas");
     }
     
