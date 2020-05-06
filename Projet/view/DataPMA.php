@@ -7,4 +7,6 @@
 	$header = 'HeaderPMA.php';
 	$main = 'MainPMA.php';
 	$footer = 'FooterPMA.php';
+
+	$script = "js/ScriptPMA.js";
 ?>

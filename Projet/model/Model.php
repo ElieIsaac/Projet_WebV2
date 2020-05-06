@@ -5,9 +5,14 @@ abstract class Model
 
     private static function setBdd()
     {
+		$host = "localhost";
+		$dbname = "orsec";
+		$id ="root";
+		$password ="";
+
         try
         {
-            self::$_bdd = new PDO('mysql:host=localhost;dbname=orsec;charset=utf8', 'root', '');
+            self::$_bdd = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8', $id, $password);
         }
         catch (Exception $e)
         {
@@ -18,7 +23,9 @@ abstract class Model
     protected static function getBdd()
     {
         if (self::$_bdd == null)
+		{
             self::setBdd();
+		}
         return self::$_bdd;
     }
 }
