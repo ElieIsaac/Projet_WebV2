@@ -3,8 +3,9 @@
     "",
     "\\Content",
     "\\Controllers",
+    "\\Metier",
     "\\Views"
   ],
-  "SelectedNode": "\\Views\\View.php",
+  "SelectedNode": "\\Metier\\Pompier.js",
   "PreviewInSolutionExplorer": false
 }

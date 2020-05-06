@@ -1,5 +1,5 @@
 <?php
-	$style = "Content/StylePMA.css";
+	$style = "content/css/StylePMA.css";
 	$title = "Vue PMA";
 
 	$onload = 'onload="Init()"';

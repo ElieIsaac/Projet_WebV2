@@ -25,11 +25,11 @@
 
 	</body>
 	
-	<script src = "jQuery.js"></script>
-	<script src = "Scripts/ScriptPMA.js"></script>
+	<script src = "js/jQuery.js"></script>
+	<script src = "js/ScriptPMA.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src = "Metier/Personne.js"></script>
-	<script src = "Metier/Civil.js"></script>
+	<script src = "content/objects/Personne.js"></script>
+	<script src = "content/objects/Civil.js"></script>
 
 </html>

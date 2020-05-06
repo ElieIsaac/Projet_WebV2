@@ -73,7 +73,7 @@ function GetVictimes()
     
     $.ajax({
         type: 'GET',
-        url: 'Controllers/SwitchController.php',
+        url: 'controller/SwitchController.php',
         timeout: 3000,
         data: {func: 'getVict'},
         success: function (data) {
@@ -114,7 +114,7 @@ function DeleteVictime(nomVict, prenomVict) {
 
     $.ajax({
         type: 'POST',
-        url: 'Controllers/SwitchController.php',
+        url: 'controller/SwitchController.php',
         data: {
             'func': 'delVict',
             'nom': nomVict,
@@ -149,7 +149,7 @@ function SendToEvac(nomVict, prenomVict, catBless)
 
     $.ajax({
         type: 'POST',
-        url: 'Controllers/SwitchController.php',
+        url: 'controller/SwitchController.php',
         data: {
             'func': 'sendEvac',
             'nom': nomVict,

@@ -39,7 +39,7 @@ class PMAController
 	public function showVue()
 	{
 		$typeVue = "vuePMA";
-		require_once('Views/View.php');
+		require_once('view/View.php');
 	}
 
 }
