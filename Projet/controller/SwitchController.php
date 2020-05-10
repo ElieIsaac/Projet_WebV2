@@ -15,6 +15,7 @@
         break;
 		}
 	}
+
 	// POST
 	else if(isset($_POST['func']) && !empty($_POST['func']))
 	{
@@ -53,7 +54,6 @@
 		$victimes = $PMACtrl->getVictimes();
 	}
 
-
 	// POST
 	function DelVictime($nom,$prenom)
 	{
@@ -69,9 +69,8 @@
 	{
 		require_once("../model/Model.php");
 		require_once("../model/PMAModel.php");
-		require_once("../Controllers/PMAController.php");
+		require_once("../controller/PMAController.php");
 		$PMACtrl = PMAController::getInstance();
 		$PMACtrl->sendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures);
 
 	}
-

@@ -137,7 +137,7 @@ function DeleteVictime(nomVict, prenomVict) {
 }
 
 // Enregistre la victime dans la table evac
-function SendToEvac(nomVict, prenomVict, catBless)
+function SendToEvac(nomVict, prenomVict, etatVict, vieVict, chargeVict, catBless)
 {
     // blessé grave / légé à présicer éventuellement
 
@@ -159,6 +159,9 @@ function SendToEvac(nomVict, prenomVict, catBless)
             'func': 'sendEvac',
             'nom': nomVict,
             'prenom': prenomVict,
+            'vivant': etatVict,
+            'vie': vieVict,
+            'charge': chargeVict,
             'blessures': bless,
         },
         timeout: 3000,
