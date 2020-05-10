@@ -1,5 +1,4 @@
 <?php
-echo "Piééé";
+echo "Serious game ORSEC NOVI";
 echo "</br>";
-echo "Piééé";
 ?>
