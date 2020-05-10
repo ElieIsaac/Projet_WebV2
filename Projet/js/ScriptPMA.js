@@ -141,7 +141,7 @@ function DeleteVictime(nomVict, prenomVict) {
 // Enregistre la victime dans la table evac
 function SendToEvac(nomVict, prenomVict, etatVict, vieVict, chargeVict, catBless)
 {
-    // blessé grave / légé à présicer éventuellement
+    // blessé grave / légé à préciser éventuellement
 
     var bless = "rien";
 
@@ -160,11 +160,14 @@ function SendToEvac(nomVict, prenomVict, etatVict, vieVict, chargeVict, catBless
     var vivant = "0";
 
     if (etatVict == false) {
-        vivant = "0";
+        vivant = 0;
     }
     if (etatVict == true ) {
-        vivant = "1";
+        vivant = 1;
     }
+
+    // On prend en charge la victime
+    chargeVict = 1;
 
     $.ajax({
         type: 'POST',
