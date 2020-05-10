@@ -1,9 +1,11 @@
 
+var btnPsy = document.getElementById('btnBlessPsy');
 var btnLeg = document.getElementById('btnBlessLeg');
 var btnGrave = document.getElementById('btnBlessGrave');
 
 var listVict = [];
 
+btnPsy.addEventListener('click', AjoutBlessPsy);
 btnLeg.addEventListener('click', AjoutBlessLeg);
 btnGrave.addEventListener('click', AjoutBlessGrave);
 
@@ -151,6 +153,18 @@ function SendToEvac(nomVict, prenomVict, etatVict, vieVict, chargeVict, catBless
     {
         bless = "1";
     }
+    else if (catBless == "psycho") {
+        bless = "2";
+    }
+
+    var vivant = "0";
+
+    if (etatVict == false) {
+        vivant = "0";
+    }
+    if (etatVict == true ) {
+        vivant = "1";
+    }
 
     $.ajax({
         type: 'POST',
@@ -159,7 +173,7 @@ function SendToEvac(nomVict, prenomVict, etatVict, vieVict, chargeVict, catBless
             'func': 'sendEvac',
             'nom': nomVict,
             'prenom': prenomVict,
-            'vivant': etatVict,
+            'vivant': vivant,
             'vie': vieVict,
             'charge': chargeVict,
             'blessures': bless,
@@ -303,6 +317,16 @@ function TransfertVictime(catBless)
         DeleteVictime(nom, prenom);
         //Suppression du tabelau js
         RemoveVictime(0);
+    }
+}
+
+function AjoutBlessPsy()
+{
+    // Si le nb de victime est supérieur à zéro
+    var nbVict = listVict.length;
+    if (nbVict > 0) {
+        TransfertVictime("psycho");
+        $("#nbBlessPsy").text(parseInt($("#nbBlessPsy").text()) + 1);
     }
 }
 

@@ -45,6 +45,7 @@ class PMAModel extends Model
 	// INSERT des éléments dans la ou les table(s) EVAC
 	public function SendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures)
 	{
+		//echo $nom.' '.$prenom.' '.$vivant.' '.$vie.' '.$charge.' '.$blessures;
 		
 		// 0 légères, 1 graves
 		$this->getBdd();
