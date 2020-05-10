@@ -2,10 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Content",
-    "\\Controllers",
-    "\\Metier",
-    "\\Views"
+    "\\js",
+    "\\model",
+    "\\view"
   ],
-  "SelectedNode": "\\Metier\\Pompier.js",
+  "SelectedNode": "\\view\\Config.php",
   "PreviewInSolutionExplorer": false
 }

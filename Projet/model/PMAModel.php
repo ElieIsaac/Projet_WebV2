@@ -43,13 +43,13 @@ class PMAModel extends Model
 	}
 
 	// INSERT des éléments dans la ou les table(s) EVAC
-	public function SendToEvac($nom,$prenom,$blessures)
+	public function SendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures)
 	{
-
+		
 		// 0 légères, 1 graves
 		$this->getBdd();
-		$query = parent::$_bdd->prepare('INSERT INTO victims (NOM, PRENOM, VIVANT, VIE, CHARGE, BLESSURES) VALUES (?, ?, 1, 100, 1, ?);');
-        $query->execute(array($nom, $prenom,$blessures));
+		$query = parent::$_bdd->prepare('INSERT INTO blesses (NOM, PRENOM, VIVANT, VIE, CHARGE, BLESSURES) VALUES (?, ?, ?, ?, ?, ?);');
+        $query->execute(array($nom, $prenom, $vivant, $vie, $charge, $blessures));
 		$query->closeCursor();
 
 		echo json_encode(["status" => "success"]);

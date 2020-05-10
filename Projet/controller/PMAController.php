@@ -31,9 +31,9 @@ class PMAController
 		$this->_model->DelVictime($nom,$prenom);
 	}
 
-	public function sendToEvac($nom,$prenom,$blessures)
+	public function sendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures)
 	{
-		$this->_model->SendToEvac($nom,$prenom,$blessures);
+		$this->_model->SendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures);
 	}
 
 	public function showVue()

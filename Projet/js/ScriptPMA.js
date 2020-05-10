@@ -94,12 +94,14 @@ function GetVictimes()
                 var vivant = vict[3];
                 // On récupère le nombre de pv de la personne
                 var vie = vict[4];
+                // On récupère la prise en charge
+                var charge = vict[5];
 
                 //console.log(nom);
                 //console.log(prenom);
 
                 // On créer le civil ( la méthode CreateVictime se charge des doublons)
-                CreateVictime(nom,prenom,vivant,vie);
+                CreateVictime(nom,prenom,vivant,vie,charge);
 
             }
 
@@ -171,7 +173,7 @@ function SendToEvac(nomVict, prenomVict, catBless)
 }
 
 // Créer la victime et l'insert dans le tableau js
-function CreateVictime(nom,prenom,vivant,vie)
+function CreateVictime(nom,prenom,vivant,vie,charge)
 {
     // On forme l'id du civil en concatenant son nom et prenom
     var id = nom.concat('', prenom);
@@ -188,6 +190,7 @@ function CreateVictime(nom,prenom,vivant,vie)
         }
 
         Civil1.vie = vie;
+        Civil1.setEnCharge(charge);
 
         listVict.push(Civil1);
         //AjouterVict();
@@ -241,7 +244,6 @@ function setCurrentVict()
     if (civ != null) {
         var nom = civ.getNom();
         var prenom = civ.getPrenom();
-        var vivant = civ.vivant;
         var vie = civ.vie;
 
         $("#nom").text(nom);
@@ -288,9 +290,12 @@ function TransfertVictime(catBless)
     if (civ != null) {
         var nom = civ.getNom();
         var prenom = civ.getPrenom();
+        var vivant = civ.vivant;
+        var vie = civ.vie;
+        var charge = civ.getEnCharge();
 
         //INSERT dans la BD Evac
-        SendToEvac(nom, prenom, catBless);
+        SendToEvac(nom, prenom, vivant, vie, charge, catBless);
         //Suppression dans la BD VICTIME
         DeleteVictime(nom, prenom);
         //Suppression du tabelau js

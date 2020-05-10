@@ -6,9 +6,9 @@
 	</head>
 
 	<body <?php echo $onload; ?>>
-		
+	
 		<div class="page">
-
+		
 			<header class="site-header">
 			<?php require_once($header); ?>
 			</header>

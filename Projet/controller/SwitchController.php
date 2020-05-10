@@ -26,7 +26,7 @@
         DelVictime($_POST['nom'], $_POST['prenom']);
         break;
 		case 'sendEvac':
-		SendToEvac($_POST['nom'], $_POST['prenom'], $_POST['blessures']);
+		SendToEvac($_POST['nom'], $_POST['prenom'], $_POST['vivant'], $_POST['vie'], $_POST['charge'], $_POST['blessures']);
 		break;
 		default:
 		SendError("Fonction inexistante dans le switch");
@@ -65,13 +65,13 @@
 	
 	}
 
-	function SendToEvac($nom,$prenom,$blessures)
+	function SendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures)
 	{
 		require_once("../model/Model.php");
 		require_once("../model/PMAModel.php");
 		require_once("../Controllers/PMAController.php");
 		$PMACtrl = PMAController::getInstance();
-		$PMACtrl->sendToEvac($nom,$prenom,$blessures);
+		$PMACtrl->sendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures);
 
 	}
 
