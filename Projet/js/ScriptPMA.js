@@ -1,4 +1,3 @@
-
 var btnPsy = document.getElementById('btnBlessPsy');
 var btnLeg = document.getElementById('btnBlessLeg');
 var btnGrave = document.getElementById('btnBlessGrave');
@@ -21,7 +20,7 @@ function Init()
     */
 
     const interval = window.setInterval(GetVictimes, 1000);
-
+    const intervalTemps = window.setInterval(EvolutionTps, 10000);
     //setCurrentVict();
     //getVictimes();
 }
@@ -98,12 +97,14 @@ function GetVictimes()
                 var vie = vict[4];
                 // On récupère la prise en charge
                 var charge = vict[5];
+                // On récupère l'etat de la victime
+                var etat = vict[6];
 
                 //console.log(nom);
                 //console.log(prenom);
 
                 // On créer le civil ( la méthode CreateVictime se charge des doublons)
-                CreateVictime(nom,prenom,vivant,vie,charge);
+                CreateVictime(nom,prenom,vivant,vie,charge,etat);
 
             }
 
@@ -193,7 +194,7 @@ function SendToEvac(nomVict, prenomVict, etatVict, vieVict, chargeVict, catBless
 }
 
 // Créer la victime et l'insert dans le tableau js
-function CreateVictime(nom,prenom,vivant,vie,charge)
+function CreateVictime(nom,prenom,vivant,vie,charge,etat)
 {
     // On forme l'id du civil en concatenant son nom et prenom
     var id = nom.concat('', prenom);
@@ -211,7 +212,8 @@ function CreateVictime(nom,prenom,vivant,vie,charge)
 
         Civil1.vie = vie;
         Civil1.setEnCharge(charge);
-
+        Civil1.setEtat(etat);
+        //Civil1.Blesser(30);
         listVict.push(Civil1);
         //AjouterVict();
         //console.log(listVict);
@@ -354,4 +356,24 @@ function AjoutBlessGrave()
 		$("#nbBlessGrave").text(parseInt($("#nbBlessGrave").text())+1);
 	}
 	
+}
+
+// Fait évoluer les conditions des victimes dans le temps
+function EvolutionTps() {
+
+    //console.log("faucheuse");
+    var nbVict = listVict.length;
+    if (nbVict > 0) {
+
+        for (var i = 0; i < listVict.length; i++) {
+            var civ = listVict[i];
+            civ.Degradation();
+            //console.log(civ.etat);
+            //console.log(civ.vie);
+        }
+        // On met à jour l'affichage
+        majAffichage();
+    }
+
+    
 }
