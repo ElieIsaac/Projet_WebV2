@@ -4,6 +4,7 @@
 		<div class="Tchat">
 		<p>Tchat</p>
 		<!--Require avec le chat -->
+		<?php  //include('chat.php'); ?>
 		</div>
 		
 		<div class="Info">

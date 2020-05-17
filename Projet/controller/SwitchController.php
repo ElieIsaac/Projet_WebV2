@@ -1,29 +1,37 @@
 <?php
 
-	// GET
+	//get
 	if(isset($_GET['func']) && !empty($_GET['func']))
 	{
-        $func = $_GET['func']; 
+        $func = $_GET['func'];
 
-		switch ($func) 
+		switch ($func)
 		{
+		case 'getBles':
+        	GetBlesses();
+        break;
+		case 'getHopi':
+			GetHopital();
+		break;
 		case 'getVict':
-        GetVictimes();
+        	GetVictimes();
         break;
 		default:
 		SendError("Fonction inexistante dans le switch");
         break;
 		}
 	}
-
-	// POST
+	//post
 	else if(isset($_POST['func']) && !empty($_POST['func']))
 	{
-		$func = $_POST['func']; 
+		$func = $_POST['func'];
 
-		switch ($func) 
+		switch ($func)
 		{
-		case 'delVict':
+		case 'delBles':
+        DelBlesses($_POST['nom'], $_POST['prenom']);
+        break;
+        case 'delVict':
         DelVictime($_POST['nom'], $_POST['prenom']);
         break;
 		case 'sendEvac':
@@ -36,12 +44,51 @@
 	}
 	else
 	{
-		SendError("Appel du Switch sans méthode demandée");
+		SendError("Appel du Switch sans mÃ©thode demandÃ©e");
 	}
 
 	function SendError($erreur)
 	{
 		echo json_encode($erreur);
+	}
+
+	function GetBlesses()
+	{
+		require_once("../model/Model.php");
+		require_once("../model/EVACModel.php");
+		require_once("../controller/EVACController.php");
+		$EVACCtrl = EVACController::getInstance();
+		$victimes = $EVACCtrl->getBlesses();
+	}
+
+	function DelVictims($nom)
+	{
+		require_once("../model/Model.php");
+		require_once("../model/EVACModel.php");
+		require_once("../controller/EVACController.php");
+		$EVACCtrl = EVACController::getInstance();
+		$EVACCtrl->delVictims($nom);
+	}
+
+		// POST
+	function DelVictime($nom,$prenom)
+	{
+		require_once("../model/Model.php");
+		require_once("../model/PMAModel.php");
+		require_once("../controller/PMAController.php");
+		$PMACtrl = PMAController::getInstance();
+		$PMACtrl->delVictime($nom,$prenom);
+	
+	}
+	
+
+	function GetHospital()
+	{
+		require_once("../model/Model.php");
+		require_once("../model/EVACModel.php");
+		require_once("../controller/EVACController.php");
+		$EVACCtrl = EVACController::getInstance();
+		$hospital = $EVACCtrl->getHospital();
 	}
 
 	// GET
@@ -54,17 +101,6 @@
 		$victimes = $PMACtrl->getVictimes();
 	}
 
-	// POST
-	function DelVictime($nom,$prenom)
-	{
-		require_once("../model/Model.php");
-		require_once("../model/PMAModel.php");
-		require_once("../controller/PMAController.php");
-		$PMACtrl = PMAController::getInstance();
-		$PMACtrl->delVictime($nom,$prenom);
-	
-	}
-
 	function SendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures)
 	{
 		require_once("../model/Model.php");
@@ -72,5 +108,5 @@
 		require_once("../controller/PMAController.php");
 		$PMACtrl = PMAController::getInstance();
 		$PMACtrl->sendToEvac($nom,$prenom,$vivant,$vie,$charge,$blessures);
-
 	}
+?>
