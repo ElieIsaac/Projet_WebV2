@@ -1,11 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Content",
+    "\\content",
+    "\\content\\css",
+    "\\content\\objects",
+    "\\controller",
     "\\js",
     "\\model",
     "\\view"
   ],
-  "SelectedNode": "\\view\\Config.php",
+  "SelectedNode": "\\content\\css\\StylePMA.css",
   "PreviewInSolutionExplorer": false
 }

@@ -6,7 +6,7 @@ abstract class Model
     private static function setBdd()
     {
 		$host = "localhost";
-		$dbname = "orsec";
+		$dbname = "projet_cesu";
 		$id ="root";
 		$password ="";
 
