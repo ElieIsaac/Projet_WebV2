@@ -2,13 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\content",
-    "\\content\\css",
     "\\content\\objects",
     "\\controller",
     "\\js",
     "\\model",
     "\\view"
   ],
-  "SelectedNode": "\\content\\css\\StylePMA.css",
+  "SelectedNode": "\\js\\ScriptPMA.js",
   "PreviewInSolutionExplorer": false
 }

@@ -8,6 +8,19 @@ btnPsy.addEventListener('click', AjoutBlessPsy);
 btnLeg.addEventListener('click', AjoutBlessLeg);
 btnGrave.addEventListener('click', AjoutBlessGrave);
 
+//Retourne les pages de règles et de Conditions d'Utilisations
+var cgu = document.getElementById("cgu");
+var rules = document.getElementById("rules");
+
+//Applique les options lors de son click
+$("#"+cgu.id).click(function(){
+  window.open('view/Cgu.php','Test','menubar=no, scrollbars=no, top=100, left=100, width=800, height=800');
+});
+
+$("#"+rules.id).click(function(){
+  window.open('view/Rules.php','Test2','menubar=no, scrollbars=no, top=100, left=100, width=800, height=800');
+});
+
 function Init()
 {
     /*
