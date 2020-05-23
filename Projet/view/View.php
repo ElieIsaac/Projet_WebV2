@@ -10,15 +10,15 @@
 		<div class="page">
 		
 			<header class="site-header">
-			<?php require_once($header); ?>
+			<?php include_once($header); ?>
 			</header>
 
 			<main class="site-content">
-			<?php require_once($main); ?>
+			<?php include_once($main); ?>
 			</main>
 
 			<footer class="site-footer">
-			<?php require_once($footer); ?>
+			<?php include_once($footer); ?>
 			</footer>
 
 		</div>

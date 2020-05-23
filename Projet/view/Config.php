@@ -1,6 +1,6 @@
 <?php
 
-	$style = "Content/Style.css";
+	$style = "Content/StyleDef.css";
 	$title = "Vue";
 	$onload = '';
 

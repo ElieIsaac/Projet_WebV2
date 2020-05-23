@@ -14,11 +14,11 @@ var rules = document.getElementById("rules");
 
 //Applique les options lors de son click
 $("#"+cgu.id).click(function(){
-  window.open('view/Cgu.php','Test','menubar=no, scrollbars=no, top=100, left=100, width=800, height=800');
+  window.open('view/CguPMA.php','Test','menubar=no, scrollbars=no, top=100, left=100, width=800, height=800');
 });
 
 $("#"+rules.id).click(function(){
-  window.open('view/Rules.php','Test2','menubar=no, scrollbars=no, top=100, left=100, width=800, height=800');
+  window.open('view/RulesPMA.php','Test2','menubar=no, scrollbars=no, top=100, left=100, width=800, height=800');
 });
 
 function Init()
