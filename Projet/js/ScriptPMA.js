@@ -1,10 +1,14 @@
+
+// Déclaration des bouttons de triage
 var normal = document.getElementById('btnNormal');
 var btnPsy = document.getElementById('btnBlessPsy');
 var btnLeg = document.getElementById('btnBlessLeg');
 var btnGrave = document.getElementById('btnBlessGrave');
 
+// Liste des victimes
 var listVict = [];
 
+// Ajout des events de click sur les bouttons de triage
 normal.addEventListener('click', RenvNormal);
 btnPsy.addEventListener('click', AjoutBlessPsy);
 btnLeg.addEventListener('click', AjoutBlessLeg);
@@ -23,6 +27,7 @@ $("#"+rules.id).click(function(){
   window.open('view/RulesPMA.php','Test2','menubar=no, scrollbars=no, top=100, left=100, width=800, height=800');
 });
 
+// Initialisation des méthodes de récupèration et de dégradation des pv
 function Init()
 {
     /*
@@ -40,6 +45,7 @@ function Init()
     //getVictimes();
 }
 
+// Récupèration des victimes depuis la table victime
 function GetVictimes()
 {
     /*
@@ -343,6 +349,7 @@ function TransfertVictime(catBless)
     }
 }
 
+// Renvoie un non blessé en dehors du PMA
 function RenvNormal() {
     var nbVict = listVict.length;
     if (nbVict > 0) {
@@ -351,6 +358,7 @@ function RenvNormal() {
     }
 }
 
+// Envoie un blessé psychologique à la table blesses
 function AjoutBlessPsy()
 {
     // Si le nb de victime est supérieur à zéro
@@ -361,6 +369,7 @@ function AjoutBlessPsy()
     }
 }
 
+// Envoie un blessé légé à la table blesses
 function AjoutBlessLeg()
 {
     // Si le nb de victime est supérieur à zéro
@@ -372,6 +381,7 @@ function AjoutBlessLeg()
 	}
 }
 
+// Envoie un blessé grave à la table blesses
 function AjoutBlessGrave()
 {
 	// Si le nb de victime est supérieur à zéro
