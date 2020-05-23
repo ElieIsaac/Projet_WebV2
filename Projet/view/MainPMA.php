@@ -54,7 +54,7 @@
 					<input id = "btnBlessPsy" type="button" value="Blessé psychologique">
 					</td>
 					<td>
-					<input id = "btnBlessLeg" type="button" value="Blessé légé">
+					<input id = "btnBlessLeg" type="button" value="Blessé léger">
 					</td>
 					<td>
 					<input id = "btnBlessGrave" type="button" value="Blessé grave">
@@ -68,7 +68,7 @@
 					Blessés psychologiques : <span id="nbBlessPsy">0</span></p>
 					</td>
 					<td>
-					Blessés légés : <span id="nbBlessLege">0</span></p>
+					Blessés légers : <span id="nbBlessLege">0</span></p>
 					</td>
 					<td>
 					Blessés graves : <span id="nbBlessGrave">0</span></p>
