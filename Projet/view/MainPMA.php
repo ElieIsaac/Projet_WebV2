@@ -43,10 +43,13 @@
 		
 		<div class="Triage">
 			<table>
-				<th colspan="3">
+				<th colspan="4">
 					Estimer comme
 				</th>
 				<tr>
+				<td>
+					<input id = "btnNormal" type="button" value="Rien à signaler">
+					</td>
 					<td>
 					<input id = "btnBlessPsy" type="button" value="Blessé psychologique">
 					</td>
@@ -58,6 +61,9 @@
 					</td>
 				</tr>
 				<tr>
+				<td>
+					Non impactés : <span id="nbNormal">0</span></p>
+					</td>
 					<td>
 					Blessés psychologiques : <span id="nbBlessPsy">0</span></p>
 					</td>

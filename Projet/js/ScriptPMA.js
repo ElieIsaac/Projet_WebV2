@@ -1,9 +1,11 @@
+var normal = document.getElementById('btnNormal');
 var btnPsy = document.getElementById('btnBlessPsy');
 var btnLeg = document.getElementById('btnBlessLeg');
 var btnGrave = document.getElementById('btnBlessGrave');
 
 var listVict = [];
 
+normal.addEventListener('click', RenvNormal);
 btnPsy.addEventListener('click', AjoutBlessPsy);
 btnLeg.addEventListener('click', AjoutBlessLeg);
 btnGrave.addEventListener('click', AjoutBlessGrave);
@@ -329,12 +331,23 @@ function TransfertVictime(catBless)
         var vie = civ.vie;
         var charge = civ.getEnCharge();
 
-        //INSERT dans la BD Evac
-        SendToEvac(nom, prenom, vivant, vie, charge, catBless);
+        if (catBless != "normal")
+        {
+            //INSERT dans la BD Evac
+            SendToEvac(nom, prenom, vivant, vie, charge, catBless);
+        }
         //Suppression dans la BD VICTIME
         DeleteVictime(nom, prenom);
         //Suppression du tabelau js
         RemoveVictime(0);
+    }
+}
+
+function RenvNormal() {
+    var nbVict = listVict.length;
+    if (nbVict > 0) {
+        TransfertVictime("normal");
+        $("#nbNormal").text(parseInt($("#nbNormal").text()) + 1);
     }
 }
 
